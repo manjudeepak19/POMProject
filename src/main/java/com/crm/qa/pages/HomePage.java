@@ -10,16 +10,15 @@ import com.crm.qa.base.TestBase;
 
 public class HomePage extends TestBase {
 
-	@FindBy(xpath = "//td[contains(text(),'User: Naveen K')]")
+	@FindBy(xpath = "//td[contains(text(),'User: MANJUNATH BS')]")
 	@CacheLookup
 	WebElement userNameLabel;
 
 	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
 	WebElement contactsLink;
-	
+
 	@FindBy(xpath = "//a[contains(text(),'New Contact')]")
 	WebElement newContactLink;
-	
 
 	@FindBy(xpath = "//a[contains(text(),'Deals')]")
 	WebElement dealsLink;
@@ -31,43 +30,35 @@ public class HomePage extends TestBase {
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
-	
-	public String verifyHomePageTitle(){
+
+	public String verifyHomePageTitle() {
 		return driver.getTitle();
 	}
-	
-	
-	public boolean verifyCorrectUserName(){
+
+	public boolean verifyCorrectUserName() {
 		return userNameLabel.isDisplayed();
 	}
-	
-	public ContactsPage clickOnContactsLink(){
+
+	public ContactsPage clickOnContactsLink() {
 		contactsLink.click();
 		return new ContactsPage();
 	}
-	
-	public DealsPage clickOnDealsLink(){
+
+	public DealsPage clickOnDealsLink() {
 		dealsLink.click();
 		return new DealsPage();
 	}
-	
-	public TasksPage clickOnTasksLink(){
+
+	public TasksPage clickOnTasksLink() {
 		tasksLink.click();
 		return new TasksPage();
 	}
-	
-	public void clickOnNewContactLink(){
+
+	public void clickOnNewContactLink() {
 		Actions action = new Actions(driver);
 		action.moveToElement(contactsLink).build().perform();
 		newContactLink.click();
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

@@ -10,7 +10,9 @@
         <methods>
           <include name="setUp"/>
           <include name="selectMultipleContactsTest"/>
+          <include name="verifyContactsPageLabel"/>
           <include name="tearDown"/>
+          <include name="validateCreateNewContact"/>
           <include name="selectSingleContactsTest"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.ContactsPageTest -->

@@ -21,8 +21,8 @@ public class TestUtil extends TestBase {
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
 
-	public static String TESTDATA_SHEET_PATH = "/Users/naveenkhunteta/Documents/workspace"
-			+ "/FreeCRMTest/src/main/java/com/crm/qa/testdata/FreeCrmTestData.xlsx";
+	public static String TESTDATA_SHEET_PATH = "C:\\Users\\manjunath.b.sreedhar\\git\\PageObjectModel\\src\\main\\java"
+			+ "\\com\\crm\\qa\\testdata\\FreeCrmTestData.xlsx";
 
 	static Workbook book;
 	static Sheet sheet;
@@ -51,9 +51,10 @@ public class TestUtil extends TestBase {
 		// System.out.println(sheet.getLastRowNum() + "--------" +
 		// sheet.getRow(0).getLastCellNum());
 		for (int i = 0; i < sheet.getLastRowNum(); i++) {
-			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
+			for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++)
+			{
 				data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
-				// System.out.println(data[i][k]);
+				
 			}
 		}
 		return data;
@@ -84,14 +85,14 @@ public class TestUtil extends TestBase {
 
 		// jquery-growl w/ no frills
 		js.executeScript("$.growl({ title: 'GET', message: '/' });");
-//'"+color+"'"
+		// '"+color+"'"
 		if (messageType.equals("error")) {
-			js.executeScript("$.growl.error({ title: 'ERROR', message: '"+message+"' });");
-		}else if(messageType.equals("info")){
+			js.executeScript("$.growl.error({ title: 'ERROR', message: '" + message + "' });");
+		} else if (messageType.equals("info")) {
 			js.executeScript("$.growl.notice({ title: 'Notice', message: 'your notice message goes here' });");
-		}else if(messageType.equals("warning")){
+		} else if (messageType.equals("warning")) {
 			js.executeScript("$.growl.warning({ title: 'Warning!', message: 'your warning message goes here' });");
-		}else
+		} else
 			System.out.println("no error message");
 		// jquery-growl w/ colorized output
 //		js.executeScript("$.growl.error({ title: 'ERROR', message: 'your error message goes here' });");

@@ -9,7 +9,7 @@ import com.crm.qa.base.TestBase;
 
 public class LoginPage extends TestBase{
 	
-	//Page Factory - OR:
+	//Page Factory - OR(Object Repository):
 	@FindBy(name="username")
 	WebElement username;
 	
@@ -43,8 +43,8 @@ public class LoginPage extends TestBase{
 		username.sendKeys(un);
 		password.sendKeys(pwd);
 		//loginBtn.click();
-		    	JavascriptExecutor js = (JavascriptExecutor)driver;
-		    	js.executeScript("arguments[0].click();", loginBtn);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", loginBtn);
 		    	
 		return new HomePage();
 	}
